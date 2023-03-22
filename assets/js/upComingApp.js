@@ -1,5 +1,5 @@
 const { createApp } = Vue
-const url = "./assets/js/amazing.json"
+const url = "../js/amazing.json"
 
 createApp({
     data() {
@@ -8,7 +8,8 @@ createApp({
             filteredEvents: undefined,
             categories: undefined,
             searchValue: '',
-            checked: []
+            checked: [],
+            currendDate: undefined
         }
     },
     created() {
@@ -16,7 +17,9 @@ createApp({
             .then(res => res.json())
             .then(data => {
                 this.events = data.events
-                this.filteredEvents = this.events
+                this.filteredEvents = this.events.filter(event => event.date>currendDate)
+                console.log(this.filteredEvents);
+                this.currendDate = data.currendDate
                 this.categories = [...new Set(this.events.map(event => event.category))]
             })
             .catch(err => console.error(err))

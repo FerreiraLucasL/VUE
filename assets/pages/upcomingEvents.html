@@ -7,28 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-    <title>Amazing Events | Home</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <title>Amazing Events | Upcoming Events</title>
 </head>
 <body>
     <header class="header">
-        <div class="logo"><a href="index.html"><img src="./assets/img/logo.png" alt="logo"></a></div>
+        <div class="logo"><a href="../../index.html"><img src="../img/logo.png" alt="logo"></a></div>
         <nav class="navigation">
             <input type="checkbox" class="toggle-menu">
             <div class="hamburguer"></div>
             <ul class="menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="./assets/pages/upcomingEvents.html">Upcoming Events</a></li>
-                <li><a href="./assets/pages/pastEvents.html">Past Events</a></li>
-                <li><a href="./assets/pages/contact.html">Contact</a></li>
-                <li><a href="./assets/pages/stats.html">Stats</a></li>
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="upcomingEvents.html">Upcoming Events</a></li>
+                <li><a href="pastEvents.html">Past Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="stats.html">Stats</a></li>
             </ul>
         </nav>
     </header>
     <div class="banner">
         <div class="container d-flex justify-content-center allign-items-center">
-            <h1>HOME</h1>
+            <h1>Upcoming Events</h1>
         </div>
     </div>
     <div id="app">
@@ -44,6 +44,7 @@
                                     :value="cat">
                             </label>
                         </template>
+
                     </div>
                 </form>
             </div>
@@ -58,7 +59,7 @@
         </div>
         <!--cards-->
         <div class="cards d-flex justify-content-start allign-items-center flex-wrap gap-4 mt-4 mb-4">
-            <template v-if="filteredEvents.length > 0" v-for="event of filteredEvents">
+            <template v-if="(filteredEvents.length > 0) && (filteredEvents.date > currentDate) " v-for="event of filteredEvents">
                 <div class="card">
                     <img class="card-img-top" :src="event.image" :alt="event.name + ' img'">
                     <div class="card-body">
@@ -73,7 +74,7 @@
                 </div>
             </template>
             <template v-else="">
-                <div> no events found </div>
+                <div> no events found</div>
             </template>
         </div>
     </div>
@@ -82,7 +83,6 @@
         <a href="www.facebook.com"><i class="bi bi-facebook"></i></a>
         <a href="www.whatsapp.com"><i class="bi bi-whatsapp"></i></a>
     </footer>
-
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
@@ -94,7 +94,7 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="../js/upComingApp.js"></script>
 </body>
 
 </html>

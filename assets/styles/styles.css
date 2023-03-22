@@ -148,6 +148,9 @@ table,td{
 #detailsCard{
     width: 35rem;
 }
+form > input {
+    background: #E9A6A6
+}
 @media (max-width:767.98px){
     .header {
         height: 150px;
