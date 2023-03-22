@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../JAVASCRIPT/task1"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "VUE"
+	}
+}
