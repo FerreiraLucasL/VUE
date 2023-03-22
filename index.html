@@ -42,11 +42,12 @@
                 <form class="form-container">
                     <div id="categories" class="d-flex allign-items-center justify-content-center">
                         <template v-for="cat of categories">
-                            <label class="form-check-label" >
+                            <label class="form-check-label">
                                 {{cat}}
-                                <input class="form-check-input" @change="filter" v-model="checked" type="checkbox" :value="cat">
+                                <input class="form-check-input" @change="filter" v-model="checked" type="checkbox"
+                                    :value="cat">
                             </label>
-                        </template> 
+                        </template>
 
                     </div>
                 </form>
@@ -54,8 +55,8 @@
             <div class="col-4">
                 <div>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" @keyup="filter" v-model="searchValue" type="search" placeholder="search" aria-label="Search"
-                            id="search" style="background: #E9A6A6">
+                        <input class="form-control me-2" @keyup="filter" v-model="searchValue" type="search"
+                            placeholder="search" aria-label="Search" id="search" style="background: #E9A6A6">
                     </form>
                 </div>
             </div>
